@@ -1,4 +1,4 @@
 node_modules
 *-lock.json
 out
-svelte-docs-0.0.1.vsix
+svelte-docs-*.vsix
