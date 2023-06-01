@@ -1,0 +1,34 @@
+{
+  "name": "svelte-docs",
+  "displayName": "SvelteKit docs",
+  "icon": "img/svelte_logo.png",
+  "repository": "https://github.com/morelmiles/vscode-sveltekit-docs",
+  "version": "0.0.1",
+  "description": "Access the SvelteKit docs right from your VS Code window",
+  "publisher": "morelmiles",
+  "homepage": "https://github.com/morelmiles/vscode-sveltekit-docs/blob/main/README.md",
+  "categories": [
+    "Other"
+  ],
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "@types/vscode": "^1.78.1",
+    "typescript": "^5.0.4"
+  },
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "docs"
+  ],
+  "author": "Luigi Morel <hi@luigimorel.co>",
+  "license": "MIT"
+}
