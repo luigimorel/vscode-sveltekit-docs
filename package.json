@@ -11,9 +11,17 @@
     "Other"
   ],
   "engines": {
-    "vscode": "^1.22.0"
+    "vscode": "^1.78.1"
   },
-  "main": "index.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.svelteKitDocsCreatingAProject",
+        "category": "SvelteKit Docs",
+        "title": "Creating A Project"
+      }
+    ]
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -30,5 +38,8 @@
     "docs"
   ],
   "author": "Luigi Morel <hi@luigimorel.co>",
-  "license": "MIT"
+  "license": "MIT",
+  "activationEvents": [
+    "onCommand:extension.svelteKitDocsCreatingAProject"
+  ]
 }
