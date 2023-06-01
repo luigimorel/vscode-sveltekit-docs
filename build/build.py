@@ -17,6 +17,7 @@ req = urllib.request.Request(
 # Find all the /docs links
 docs = urllib.request.urlopen(req)
 links = re.findall('href="(/docs/.*?)"', docs.read().decode('utf-8'))
+print(links)
 
 found = []
 pages = []
@@ -37,7 +38,6 @@ for url in sorted(set(links)):
 # Generate command definitions in package.json
 with open(join(abspath(dirname(__file__)), '../package.json'), 'r') as f:
     data = json.load(f)
-    print(data)
     data['contributes']['commands'] = []
     data['activationEvents'] = []
 
@@ -65,7 +65,7 @@ with open(join(abspath(dirname(__file__)), '../src/extension.ts'), 'w+') as f:
             'vscode.commands.registerCommand('
             + "'extension." + page['command'] + "', () => {\n"
             + "        vscode.commands.executeCommand('vscode.open', "
-            + "vscode.Uri.parse('https://kit.svelte.dev/docs/" + page['slug']
+            + "vscode.Uri.parse('https://kit.svelte.dev/docs/s" + page['slug']
             + "'));\n"
             + "    });\n"
             + "    context.subscriptions.push(" + page['command'] + ");\n"
